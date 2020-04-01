@@ -22,3 +22,30 @@
 # 4
 # 2 
 # 1
+
+#Problem1
+
+def collatz(number):
+
+    if number % 2 == 0:
+        print(number // 2)
+        return number // 2
+
+    elif number % 2 == 1:
+        print(number * 3 + 1)
+        return number * 3 + 1
+
+def again(another_integer):
+    while another_integer != 1:
+        another_integer = collatz(another_integer)
+
+integer = None
+        
+while type(integer) != int:        
+    print('Enter an integer.')
+    try:
+        integer = int(input())
+        again(integer)
+    except ValueError:
+        print('This must be an integer.')
+    
